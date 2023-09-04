@@ -88,7 +88,7 @@ img {
     display: flex;
     gap:10px;
     padding: 10px;
-    
+    cursor: pointer;
 }
 
 .chat_active{
@@ -102,9 +102,6 @@ img {
 }
 
 
-/* DEVO RIVEDERE QUESTA PARTE */
-
-
 .message_main {
     display: flex;
    flex-wrap: wrap;
@@ -114,8 +111,31 @@ img {
     width: 100%;
     height: 900px;
     background-image: url(../img/mine.jpg);
+    padding: 20px;
     
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
+
+
+.mex {
+    max-width: 40%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.received {
+    background-color:#ffffff;
+    align-self: flex-start;
+}
+
 .bar_text {
     width: 100%;
     margin-top: auto;
@@ -133,3 +153,5 @@ img {
 .bar_text  input {
     height: 50px;
 }
+
+
