@@ -57,6 +57,22 @@
                 <!-- Contenitore delle chat -->
                 <div class="conteiner_chat">
 
+                    <div v-for="chat in contacts" class="chat" >
+                        <div>
+                            <img :src=chat.avatar :alt="chat.name">
+                        </div>
+                        <div class="chat_text">
+                            <div>
+                                <h4>{{chat.name}}</h4>
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
+                            <p>12:00</p>
+                        </div>
+                    </div>
+
+
+
+<!-- 
                     <div class="chat chat_active">
                         <div>
                             <img src="./img/avatar_1.jpg" alt="Michele">
@@ -81,7 +97,7 @@
                             </div>
                             <p>12:00</p>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
                 
