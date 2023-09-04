@@ -165,7 +165,17 @@ const { createApp } = Vue
                                   }
                                 ],
                     }
-          ]
+          ],
+          chatActive: 0,
+          
+
+      }
+    },
+
+    methods : {
+      clickChat(index) {
+        
+        this.chatActive = index;
       }
     }
   }).mount('#app')

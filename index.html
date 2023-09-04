@@ -57,7 +57,11 @@
                 <!-- Contenitore delle chat -->
                 <div class="conteiner_chat">
 
-                    <div v-for="chat in contacts" class="chat" >
+                    <div 
+                        v-for="(chat, index) in contacts" 
+                        class="chat" 
+                        @click="clickChat(index)">
+
                         <div>
                             <img :src=chat.avatar :alt="chat.name">
                         </div>
@@ -68,36 +72,10 @@
                             </div>
                             <p>12:00</p>
                         </div>
+
                     </div>
 
 
-
-<!-- 
-                    <div class="chat chat_active">
-                        <div>
-                            <img src="./img/avatar_1.jpg" alt="Michele">
-                        </div>
-                        <div class="chat_text">
-                            <div>
-                                <h4>Michele</h4>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                            <p>12:00</p>
-                        </div>
-                    </div>
-
-                    <div class="chat">
-                        <div>
-                            <img src="./img/avatar_1.jpg" alt="Michele">
-                        </div>
-                        <div class="chat_text">
-                            <div>
-                                <h4>Michele</h4>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                            <p>12:00</p>
-                        </div>
-                    </div> -->
                     
                 </div>
                 
@@ -109,8 +87,8 @@
 
                     <div class="messages_header">
                         <div class="messages_header_utent">
-                            <img src="./img/avatar_1.jpg" alt="Michele">
-                            <h4>Michele</h4>                           
+                            <img :src=contacts[chatActive].avatar :alt="contacts[chatActive].name">
+                            <h4>{{contacts[chatActive].name}}</h4>                           
                         </div>
 
                         <div class="messages_header_icons ">
@@ -124,8 +102,17 @@
                 
                 <div class="message_main">
                     <div class="messages_view_container">
-                        <div class="mex sent ">mandato</div>
-                        <div class="mex received">ricevuto</div>
+
+                        <div 
+                            v-for="mex in contacts[chatActive].messages"
+                            :class="(mex.status == 'sent') ? 'sent':'received'"
+                            class="mex"
+                            >
+                            {{mex.message}}
+                        </div>
+
+
+
                     </div>
                     <div class="bar_text">
                     <i class="fa-regular fa-face-smile fa-2xl"></i>
