@@ -121,7 +121,9 @@
                                 class="form-control"     
                                 aria-label="Scrivi qualcosa" 
                                 aria-describedby="inputGroup-sizing-default"
-                                placeholder="Scrivi un messaggio">
+                                placeholder="Scrivi un messaggio"
+                                v-model="mex.message"
+                                @keyup.enter="sendMex()">
                     </div>
                     <i class="fa-solid fa-microphone fa-2xl"></i>
                     </div>

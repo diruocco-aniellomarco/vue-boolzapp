@@ -167,8 +167,16 @@ const { createApp } = Vue
                     }
           ],
           chatActive: 0,
-          
-
+          mex: {
+                date: '',
+                message: '',
+                status: 'sent'
+                },
+          rispMex: {
+                    date: '',
+                    message: 'Ok',
+                    status: 'received'
+                   }
       }
     },
 
@@ -176,6 +184,23 @@ const { createApp } = Vue
       clickChat(index) {
         
         this.chatActive = index;
+      },
+
+      sendMex() {
+        this.contacts[this.chatActive].messages.push(this.mex),
+        this.mex = {
+                    date: '',
+                    message: '',
+                    status: 'sent'
+                    },
+        setTimeout(this.answerMex, 1000);
+            
+      },
+
+      answerMex() {
+        this.contacts[this.chatActive].messages.push(this.rispMex)        
       }
+    
+
     }
   }).mount('#app')
